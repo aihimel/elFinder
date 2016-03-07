@@ -219,6 +219,9 @@ class elFinderConnector {
 	 * @author Naoki Sawada
 	 */
 	protected function input_filter($args) {
+		
+		if(is_string($args)) $args = stripslashes($args);
+		
 		static $magic_quotes_gpc = NULL;
 		
 		if ($magic_quotes_gpc === NULL)
